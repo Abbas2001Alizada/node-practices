@@ -10,6 +10,10 @@
 // import add from"./ondex.js"
 // console.log(add(10,32));
 // // console.log(math.subtract(12,31))
-const imp=require("./ondex.js");
-console.log(imp.a)
-console.log(imp.b)
+// const imp=require("./ondex.js");
+// console.log(imp.a)
+// console.log(imp.b)
+// function greeting(callback) {
+//     callback (name)
+// }
+// greeting("abbas")
