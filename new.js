@@ -1,20 +1,25 @@
-const ordering=require("./order.js")
-const drink = require("./additional.js");
-const neworder=new ordering;
-const newdrink=new drink
-neworder.on("pizza",(siz,topping)=>{
-    console.log("order received "+siz +" pizza with"+ topping)
-    newdrink.addDrink(siz)
-})
-neworder.on("burger",(siz,price)=>{
-    console.log("order received "+siz +" burger price is: "+ price)
-newdrink.addDrink(siz)
-})
-neworder.orderPizza();
-neworder.orderBurger();
-neworder.countorder();
+const buffer = new Buffer.from("new page","utf-8");
+console.log(buffer.toString());
+// console.log(buffer.toJSON());
+// console.log(buffer)
 
-// const EventEmitter= require("node:events")
+// const ordering=require("./order.js")
+// const drink = require("./additional.js");
+// const neworder=new ordering;
+// const newdrink=new drink
+// neworder.on("pizza",(siz,topping)=>{
+//     console.log("order received "+siz +" pizza with"+ topping)
+//     newdrink.addDrink(siz)
+// })
+// neworder.on("burger",(siz,price)=>{
+//     console.log("order received "+siz +" burger price is: "+ price)
+// newdrink.addDrink(siz)
+// })
+// neworder.orderPizza();
+// neworder.orderBurger();
+// neworder.countorder();
+
+// // const EventEmitter= require("node:events")
 
 // const emitter=new EventEmitter();
 // const order=document.querySelector(".order")
