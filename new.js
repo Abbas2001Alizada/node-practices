@@ -1,5 +1,14 @@
-const buffer = new Buffer.from("new page","utf-8");
-console.log(buffer.toString());
+const fileSystem = require("node:fs")
+fileSystem.readFile("./text.txt","utf8",(err,data)=>{
+   if(err){
+    console.log(err)
+   } console.log(data)
+})
+fileSystem.writeFile("./text.txt","it is updated ","utf8",(err,data)=>{if(err){console.log(err)}
+console.log("text is updated ")})
+
+// const buffer = new Buffer.from("new page","utf-8");
+// console.log(buffer.toString());
 // console.log(buffer.toJSON());
 // console.log(buffer)
 
