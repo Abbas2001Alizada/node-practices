@@ -1,8 +1,13 @@
-const fileSystem = require("node:fs")
-const readed=fileSystem.readFileSync("./text.txt","utf-8")
-console.log(readed);
+const fileSystem = require("node:fs/promises")
+fileSystem.readFile("./text.txt", "utf-8")
+    .then((data) => { console.log(data) })
+    .catch((err) => { console.log(err) })
 
-fileSystem.writeFileSync("./text.txt","change the text using fs module")
+// const fileSystem = require("node:fs")
+// const readed=fileSystem.readFileSync("./text.txt","utf-8")
+// console.log(readed);
+
+// fileSystem.writeFileSync("./text.txt","change the text using fs module")
 
 
 
