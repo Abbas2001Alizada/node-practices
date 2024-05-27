@@ -1,1 +1,1 @@
-change the text using fs module
+the text to be sent to net file

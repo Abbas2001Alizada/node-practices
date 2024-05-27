@@ -1,12 +1,44 @@
-const fs=require("node:fs");
-const readable=fs.createReadStream("./text.txt", { encoding: "utf8" });
-const writable=fs.createWriteStream("./text1.txt");
-readable.on("data",(chunk) => {
-    // console.log(chunk.toString());
-    writable.write(chunk)
+const http = require('http');
+const fs = require('node:fs');
+const server = http.createServer((req, res) => {
 
+    // const index = fs.readFileSync("./index.html")
+    res.writeHead(400, { "Content-Type": "text/html" });
+    // fs.createReadStream("./index.html").pipe(res)
+    let html =fs.readFileSync("./index.html","utf-8");
+    html=html.replace("strengthen", "improve")
+    res.end(html)
+
+    // res.end(index)
 }
 );
+server.listen(3000, () => {
+    console.log("server is running on port 2000")
+})
+
+
+
+
+// /
+// const fs=require("node:fs");
+
+// const zlip=require("zlip");
+// const readable=fs.createReadStream("./text.txt", { encoding: "utf8",
+//     highWaterMark: 8,
+
+//  });
+// const writable=fs.createWriteStream("./text1.txt");
+
+// readable.pipe(writable);
+// readable.on("data",(data) => {
+//     console.log(data.toString());
+//     writable.write(data.toString());
+
+// }),
+// readable.on("err",(err) =>{
+//     console.log(err);
+// }
+// )
 
 // const fileSystem= require('node:fs/promises');
 // const readable=fileSystem.createReadStream("./text.js")
