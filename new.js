@@ -2,12 +2,25 @@ const http = require('http');
 const fs = require('node:fs');
 const server = http.createServer((req, res) => {
 
+    if(req.url==="/about"){
+        res.end("from about page")
+    }else if(req.url==="/api"){
+        res.end("from api page")
+    }else if(req.url==="/contact"){
+        res.end("from contact page")
+    }else if(req.url==="/"){
+        res.end("from home page")
+        
+    }else{
+        res.end("not found")
+    }
+
     // const index = fs.readFileSync("./index.html")
-    res.writeHead(400, { "Content-Type": "text/html" });
+    // res.writeHead(400, { "Content-Type": "text/html" });
     // fs.createReadStream("./index.html").pipe(res)
-    let html =fs.readFileSync("./index.html","utf-8");
-    html=html.replace("strengthen", "improve")
-    res.end(html)
+    // let html =fs.readFileSync("./index.html","utf-8");
+    // html=html.replace("strengthen", "improve")
+    // res.end(html)
 
     // res.end(index)
 }
