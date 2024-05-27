@@ -1,7 +1,35 @@
-const fileSystem = require("node:fs/promises")
-fileSystem.readFile("./text.txt", "utf-8")
-    .then((data) => { console.log(data) })
-    .catch((err) => { console.log(err) })
+const fs=require("node:fs");
+const readable=fs.createReadStream("./text.txt", { encoding: "utf8" });
+const writable=fs.createWriteStream("./text1.txt");
+readable.on("data",(chunk) => {
+    // console.log(chunk.toString());
+    writable.write(chunk)
+
+}
+);
+
+// const fileSystem= require('node:fs/promises');
+// const readable=fileSystem.createReadStream("./text.js")
+// const writeable=fileSystem.createWriteStream("./text1.txt")
+
+// readable.on("data",(chunk)=>{
+//     writeable.write(chunk)
+// })
+
+
+// const { read } = require('node:fs');
+// const fileSystem = require('node:fs/promises');
+// async function readFile(){
+//     try {const data=await fileSystem.readFile("./text.txt","utf-8")
+//     console.log(data)
+// }catch(err){console.log(err)}
+// }
+// readFile();
+
+// const fileSystem = require("node:fs/promises")
+// fileSystem.readFile("./text.txt", "utf-8")
+//     .then((data) => { console.log(data) })
+//     .catch((err) => { console.log(err) })
 
 // const fileSystem = require("node:fs")
 // const readed=fileSystem.readFileSync("./text.txt","utf-8")
